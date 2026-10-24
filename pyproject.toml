@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "casspar"
+version = "0.1.0"
+description = "CASSPAR: Causal Structure Search for the Spatial Autoregressive Model"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "lingam>=1.8",
+]
+
+[project.optional-dependencies]
+experiments = [
+    "pandas",
+    "matplotlib",
+    "seaborn",
+    "jupyter",
+]
+
+[tool.setuptools]
+packages = ["casspar"]
+
+[tool.uv]
+# Versions used for the paper (Python 3.14). They pin uv.lock only; pip users are not constrained.
+constraint-dependencies = [
+    "numpy==2.4.1; python_version >= '3.11'",
+    "scipy==1.16.3; python_version >= '3.11'",
+    "scikit-learn==1.8.0; python_version >= '3.11'",
+    "lingam==1.12.1; python_version >= '3.11'",
+    "joblib==1.5.3; python_version >= '3.11'",
+    "pandas==3.0.0; python_version >= '3.11'",
+    "matplotlib==3.10.8; python_version >= '3.11'",
+    "seaborn==0.13.2; python_version >= '3.11'",
+]
